@@ -1,0 +1,589 @@
+$colors :(
+    intro-and-email-sign-up-background: hsl(217, 28%, 15%),
+    main-background : hsl(218, 28%, 13%),
+    footer-background: hsl(216, 53%, 9%),
+    testimonials-background: hsl(219, 30%, 18%),
+    cyan: hsl(176, 68%, 64%),
+    cyanHover: hsl(198, 60%, 50%),
+    Light-Red-error-: hsl(0, 100%, 63%),
+    White: hsl(0, 0%, 97%)
+);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Open Sans;
+    color: map-get($colors, $key: White);
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: map-get($colors, $key: White);
+    opacity: .9;
+    transition: opacity .1s ease-in, font-weight .2s ease;
+
+    &:hover {
+        font-weight: 700;
+        opacity: 1;
+    }
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 20px;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+    background: linear-gradient(to right, map-get($colors, $key: cyan)  ,map-get($colors, $key: cyanHover));
+    transition: background .4s ease;
+    
+    &:hover {
+        background: linear-gradient(to right, map-get($colors, $key: cyan)  ,map-get($colors, $key: cyan));
+    }
+    @media screen and (max-width : 700px){
+        font-size: 12px;
+    }
+}
+
+
+main {
+    background: url('../images/bg-curvy-desktop.svg') left 70%  top 500px no-repeat;
+    background-size: cover;
+    background-color: map-get($colors, $key: intro-and-email-sign-up-background);
+
+    @media screen and (max-width : 700px){
+        background: url('../images/bg-curvy-mobile.svg')  left 70%  top 500px no-repeat;
+        background-size: cover;
+        background-color: map-get($colors, $key: intro-and-email-sign-up-background);
+    }
+
+    & .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Ralleway;
+        height: 100px;
+
+        @media screen and (max-width : 700px){
+            height: 70px;
+        }
+
+        & .header__container {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            @media screen and (max-width : 700px){
+                width: 90%;
+            }
+
+            & .logo {
+                width: 120px;
+                @media screen and (max-width : 700px){
+                    width: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            & .navbar {
+                width: 25%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                @media screen and (max-width : 700px){
+                    width: 60%;
+                }
+                
+                & a {
+                    font-size: 16px;
+                    @media screen and (max-width : 700px){
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    & .sections {
+        display: grid;
+        grid-row-gap: 120px;
+
+        & .section__intro {
+            text-align: center;
+            margin-top: 40px;
+
+            @media screen and (max-width : 700px){
+                margin-top: 15px;
+            }
+            
+            & img, & .description {
+                width: 40%;
+                margin: 0 auto;
+
+                @media screen and (max-width : 700px){
+                    width: 90%;
+                }
+            }
+            & img {
+                width: 40%;
+
+                @media screen and (max-width : 700px){
+                    width: 90%;
+                }
+            }
+
+            & .description {
+                display: grid;
+                grid-gap: 20px;
+
+                @media screen and (max-width : 700px){
+                    
+                }
+                
+
+                & .title {
+                    font-size: 27px;
+                    font-weight: 600;
+
+                    @media screen and (max-width : 700px){
+                        font-size: 18px;
+                    }
+                }
+
+                & .text {
+                    width: 83%;
+                    margin: 0 auto;
+                    @media screen and (max-width : 700px){
+                        font-size: 12px;
+                        width: 95%;
+                    }
+                }
+
+                & button {
+                    width: 40%;
+                    margin: auto;
+
+                    @media screen and (max-width : 700px){
+                        width: 80%;
+                    }
+                }
+            }
+        }
+
+        & .section__2 {
+            width: 60%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-rows: 1fr 1Fr;
+            grid-gap: 50px;
+            align-items: center;
+
+            @media screen and (max-width : 700px) {
+                width: 90%;
+                grid-gap: 10px;
+            }
+
+            & .item {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 50px;
+                text-align: center;
+
+                @media screen and (max-width : 700px) {
+                    grid-template-rows: 1fr 1fr;
+                    grid-template-columns: 1fr;
+                    grid-gap: 20px;
+                }
+               
+
+                & .sub__item {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    grid-gap: 10px;
+                    text-align: center;
+                   
+                    & img {
+                        align-self: center;
+                        justify-self: center;
+                        @media screen and (max-width : 700px) {
+                            width: 50px;
+                        }
+                    }
+
+                    & .description {
+                        display: grid;
+                        grid-gap: 5px;
+
+                        & .title {
+                            font-weight: 600;
+                            font-size: 16px;
+    
+                            @media screen and (max-width : 700px) {
+                                font-size: 14px;
+                            }
+                        }
+    
+                        & .text {
+                            font-size: 13px;
+
+                            @media screen and (max-width : 700px) {
+                                font-size: 12px;
+                            }
+                        }   
+                    }
+                }
+            }
+        }
+
+        & .section__3 {
+            width: 85%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 50px;
+            align-items: center;
+            @media screen and (max-width : 700px) {
+                width: 90%;
+                grid-template-columns: 1fr;
+                grid-row-gap: 50px;
+            }
+
+            & >img {
+                width: 90%;
+                @media screen and (max-width : 700px) {
+                    width: 100%;
+                }
+            }
+            & .description {
+                display: grid;
+                grid-row-gap: 15px;
+                @media screen and (max-width : 700px) {
+                }
+
+                & .title {
+                    font-size: 30px;
+                    font-weight: 600;
+                    width: 70%;
+
+                    @media screen and (max-width : 700px) {
+                        font-size: 14px;
+                        width: 100%;
+                    }
+                }
+
+                & .text {
+                    width: 90%;
+                    @media screen and (max-width : 700px) {
+                        font-size: 12px;
+                        width: 100%;
+                    }
+                }
+
+            
+                & a {
+                    color: map-get($colors, $key: cyan)!important;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    border-bottom: 2px solid map-get($map: $colors, $key: cyan);
+                    width: 30%;
+                    @media screen and (max-width : 700px) {
+                        font-size: 13px;
+                        width: 55%;
+                    }
+
+                    &:hover {
+                        color: map-get($colors, $key: white)!important;
+                        border-bottom: 2px solid map-get($map: $colors, $key: white);
+
+                        & svg {
+
+                            & path {
+                                fill: map-get($map: $colors, $key: intro-and-email-sign-up-background);
+                            }
+                            & use {
+                                fill: map-get($map: $colors, $key: white);
+                            }
+                        }
+                    }
+                    & span {
+                        color: inherit;
+                        margin-right: 5px;
+                        @media screen and (max-width : 700px) {
+                            margin-right: 0px;
+                            font-size: 13px;
+
+                        }
+                    }
+                }
+            }
+        }
+
+        & .section__4 {
+            width: 80%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-column-gap: 25px;
+            position: relative;
+            @media screen and (max-width : 700px){
+                grid-template-columns: 1fr;
+                grid-row-gap: 25px;
+            }
+
+            & .quote {
+                position: absolute;
+                left: -7px;
+                top: -35px;
+            }
+
+            & .testimonial {
+                background-color: map-get($map: $colors, $key: testimonials-background);
+                position: relative;
+                padding: 40px 20px 30px;
+                border-radius: 4px;
+                display: grid;
+                grid-row-gap: 20px;
+
+                & .description {
+                    font-size: 13px;
+                }
+
+                & .user__infos {
+                        display: flex;
+
+                    & .user__image {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-right: 10px;
+
+                        & img {
+                            width: 30px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    & .infos {
+
+                        & .user__name {
+                            font-weight: 600;
+                        }
+
+                        & .user__work {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .get__access {
+        background-color: map-get($colors, $key: main-background);
+        width: 60%;
+        margin: auto;
+        box-shadow: 2px 4px 6px rgba($color: #000000, $alpha: .5), 0 -1px 7px rgba($color: #000000, $alpha: .2);
+        border-radius: 4px;
+        padding: 40px 40px 20px;
+        display: grid;
+        grid-row-gap: 20px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: translateY(90px);
+        @media screen and (max-width : 700px){
+            width: 90%;
+            padding: 40px 10px 10px;
+        }
+
+        & .title {
+            font-weight: 700;
+            font-size: 24px;
+            @media screen and (max-width : 700px){
+                font-size: 16px;
+            }
+        }
+
+        & .sub__title {
+            @media screen and (max-width : 700px){
+                font-size: 13px;
+            }
+        }
+
+        & .form {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            column-gap: 20px;
+
+            @media screen and (max-width : 700px){
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+                row-gap: 10px;
+            }
+
+            & .entry {
+                display: flex;
+                flex-direction: column;
+
+                & .error {
+                    text-align: left;
+                    margin-left: 30px;
+                    font-size: 12px;
+                    color: map-get($map: $colors, $key: Light-Red-error-);
+                    margin-top: 4px;
+                    opacity: 0;
+                    transition: .2s ease;
+                    @media screen and (max-width : 700px){
+                        margin-left: 0;
+                        text-align: center;
+                    }
+        
+                }
+            }
+
+            & input {
+                padding-left: 20px;
+                width: 100%;
+                color: map-get($map: $colors, $key: intro-and-email-sign-up-background);
+                @media screen and (max-width : 700px){
+                   font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: map-get($colors, $key: footer-background);
+    padding: 150px 0 100px;
+    @media screen and (max-width : 700px){
+        width: 100%;
+    }
+    & .footer__container {
+        width: 85%;
+        margin: auto;
+        display: grid;
+        row-gap: 30px;
+
+        @media screen and (max-width : 700px){
+            width: 90%;
+        }
+
+        & .logo {
+            width: 140px;
+        }
+
+        & .footer__content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 20px;
+
+            
+            @media screen and (max-width : 700px){
+                grid-template-columns: 1fr;
+                grid-row-gap: 50px;
+            }
+
+            & .localisation {
+                display: flex;
+                align-items: flex-start;
+
+                & img {
+                    margin-right: 15px;
+                }
+            }
+
+            & .contacts {
+                display: grid;
+                grid-template-rows: 1fr 1fr 1fr 1Fr;
+                grid-row-gap: 20px;
+                @media screen and (max-width : 700px){
+                    grid-template-rows: 1fr 1fr;
+                }
+
+                & .phone {
+                    display: flex;
+                    align-items: center;
+
+                    & span {
+                        margin-left: 10px;
+                    }
+                }
+
+                & .email {
+                    display: flex;
+                    align-items: center;
+                    & a {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            & .about__us {
+                display: grid;
+                grid-template-rows: 1fr  1fr 1Fr 1fr;
+                grid-row-gap: 20px;
+            }
+
+            & .contact__us {
+                display: grid;
+                grid-template-rows: 1fr  1fr 1Fr 1fr;
+                grid-row-gap: 20px;
+                @media screen and (max-width : 700px){
+                }
+            }
+
+            & .socials__icons {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                justify-content: center;
+
+                @media screen and (max-width : 700px){
+                    display: flex;
+                }
+
+                & a {
+                    @media screen and (max-width : 700px){
+                        margin: 0 5px;
+                    }
+
+                    & svg {
+                        border: 1px solid map-get($map: $colors, $key: White);
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        padding: 5px;
+
+                        &:hover {
+                            border: 1px solid map-get($map: $colors, $key: cyan);
+
+                            & path {
+                                fill: map-get($map: $colors, $key: cyan);
+                            }
+                        }
+                        
+
+                        & path {
+                            fill: map-get($map: $colors, $key: White);
+                            transition: fill .4s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
